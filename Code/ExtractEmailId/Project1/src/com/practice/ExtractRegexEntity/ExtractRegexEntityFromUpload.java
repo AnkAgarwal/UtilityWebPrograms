@@ -1,7 +1,9 @@
 package com.practice.ExtractRegexEntity;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -20,6 +22,9 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import com.ngi.RegexValidation.Configuration.RegexConfiguration;
+import com.ngi.RegexValidation.utility.RegexMaches;
 
 
 /**
@@ -111,7 +116,7 @@ public class ExtractRegexEntityFromUpload extends HttpServlet {
 		try{
 			List<FileItem> fileItemsList=uploader.parseRequest(request);
 			Iterator<FileItem> fileItemsIterator = fileItemsList.iterator();
-			
+			RegexMaches regObj = new RegexMaches();
 			 while(fileItemsIterator.hasNext()){
 	                FileItem fileItem = fileItemsIterator.next();
 	                System.out.println("FieldName="+fileItem.getFieldName());
@@ -122,9 +127,27 @@ public class ExtractRegexEntityFromUpload extends HttpServlet {
 	                File file = new File(request.getServletContext().getAttribute("FILES_DIR")+File.separator+fileItem.getName());
 	                System.out.println("Absolute Path at server="+file.getAbsolutePath());
 	                fileItem.write(file);
-	                out.write("File "+fileItem.getName()+ " uploaded successfully.");
-	                out.write("<br>");
-	                out.write("<a href=\"ExtractRegexEntityFromUpload?fileName="+fileItem.getName()+"\">Download "+fileItem.getName()+"</a>");
+	                //ServletOutputStream os= response.getOutputStream();
+	                BufferedReader readFile=new BufferedReader(new FileReader(file));
+	                List<String> emailList = null;
+	                while(readFile.ready()){
+	                	
+	                	String text=readFile.readLine();
+	                	emailList = regObj.getMatchedResult(RegexConfiguration.regexEmilId,text);
+	                	for (int i = 0; i < emailList.size(); i++) {
+							text=text.replaceAll(emailList.get(i), "<b><u>"+emailList.get(i)+"</u></b>");  
+							
+						}
+	                	text += "<br>";
+	                	emailList.clear();
+	                	//os.println(text);
+	                	out.println(text);
+	                	
+	                }
+	                readFile.close();
+	                //out.write("File "+fileItem.getName()+ " uploaded successfully.");
+	                //out.write("<br>");
+	               // out.write("<a href=\"ExtractRegexEntityFromUpload?fileName="+fileItem.getName()+"\">Download "+fileItem.getName()+"</a>");
 			 }
 		  } catch (FileUploadException e) {
 	            out.write("Exception in uploading file.");
