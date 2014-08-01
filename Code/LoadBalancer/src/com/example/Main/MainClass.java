@@ -13,16 +13,16 @@ public class MainClass {
 		int numThread=3;
 		//boolean[] flagArr = new boolean[numThread];
 		
-		ProcessQueue prcQueue=new ProcessQueue(numThread);
+		/*ProcessQueue prcQueue=new ProcessQueue(numThread);
 		
 		for (int i = 0; i < 10; i++) {
 			prcQueue.addItem(i+1+"");
-		}
-		
+		}*/
+		//Action.populateQueue();
 		
 		
 		Manager obj=new Manager();
-		obj.RoundRobin(numThread, prcQueue);//, objAction, runArr, threadArr);
+		obj.RoundRobin(numThread);//, objAction, runArr, threadArr);
 		
 	}
 

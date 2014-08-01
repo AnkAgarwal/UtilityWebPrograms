@@ -3,21 +3,20 @@ package com.example.Queue;
 import java.util.ArrayList;
 
 public class ProcessQueue {
-
-	private ArrayList<String> queue;
-	public static int[] completeArr = null;
-	public static int[] startArr = null;
+	
+	//8457575517
+	public ArrayList<String> queue;
+	//public String message;
+	//public static int[] completeArr = null;
+	//public static int[] startArr = null;
 	
 	public ProcessQueue(){ 
 		this.queue=new ArrayList<String>();
-		completeArr=new int[3];
-		startArr=new int[3];
+		//message="";
     } 
 	
 	public ProcessQueue(int numThread){ 
 		this.queue=new ArrayList<String>();
-		completeArr=new int[numThread];
-		startArr=new int[numThread];
     } 
 	
 	
@@ -30,7 +29,10 @@ public class ProcessQueue {
 	}
 	
 	public String removeItem(int index){
-		return this.queue.remove(index);
+		if (this.queue.size()>0)
+			return this.queue.remove(index);
+		else
+			return null;
 	}
 	
 	public void deleteItem(int index){
@@ -44,4 +46,6 @@ public class ProcessQueue {
 	public int getSize(){
 		return this.queue.size();
 	}
+
+	
 }
