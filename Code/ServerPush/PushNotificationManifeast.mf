@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.ngi.pushserver.serverpush
+Class-path: gcm-server.jar json-simple.1.1.jar bcprov-1.45.jar JavaPNS-1.45.jar Log4J.jar mysql-connector-java-5.1.14-bin.jar

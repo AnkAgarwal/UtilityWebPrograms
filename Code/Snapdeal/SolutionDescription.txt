@@ -1,0 +1,33 @@
+To implement the current implementation I have used 2 set of Concurrent Hashmap.
+First hashmap(inputMap) stores the ID(which is random generated unique number) along with the FileObject class object.
+FileObject class holds the hashcode of the input data, file length, file path and isProcessed with default value to false.
+
+
+Second hashmap(referenceFileCount) stores the file path as the key with the reference count to particular file path as its value, 
+which is updated by the delete thread and the DeDuplicate thread.
+
+PUT OPERATION
+Whenever a new data comes, a new Random number is generated which is checked for uniqueness from the hashmap and the data is saved 
+in the file and a file object is created after computing the SHA hashcode for the current input and is inserted in inputMap
+Also an entry is made in referenceFileCount with the value 1.
+
+DELETE OPERATION
+Based on the id, the FileObject is extracted and the entry is deleted from the inputMap. From the extracted FileObject, file path
+ is retrived and is checked for reference count from the referenceFileCount. In case the count is 1, the entry is removed from the
+ same else the reference count is decrement by 1.
+ 
+ GET OPERATION
+ Based on the id, the FileObject is extracted and is returned.
+ Exception handling is done to return null when the particular file is deleted by another thread or the entry is removed from the 
+ inputmap.
+ 
+De-Duplication
+The inputMap is iterated for getting the object which has not yet been processed for de-duplication check. The extracted object is
+checked for duplication (by first matching the file size and then with the hashcode) across the whole map with the processed item until it is found or all processed object has been checked.
+In case no duplicate is found, then this object is marked as processed.
+Else in case of duplication, the file path is updated with the processed object file path and the referenceFileCount entry is
+incremented by 1 for the specific file path. Also the duplicate file is deleted and the entry is removed for the same from the 
+referenceFileCount.
+Exception handling is done to retain the original file path, in case processed object is deleted by some other thread after it is
+selected for updating the current object based on file size and hashcode. In this case, then entry are retained and the object
+is marked as processed.

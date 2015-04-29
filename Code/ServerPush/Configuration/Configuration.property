@@ -1,0 +1,13 @@
+ 
+ dataBase_url =jdbc:sqlserver://71.126.253.177:9535;databaseName=LINX_DEV;
+ dbName =instaparty_utildatabase_production_demo
+ dataBase_userName=Nextgen01
+ database_password =admin1234
+ 
+ androidSenderID=AIzaSyB1HVD35NSqZ8Dr7w5zSkYX3-VMNiNd-N0
+ partnerAppKeyStore=Keystore/IP_Portal_Key_Production.p12
+ userAppKeyStore=Keystore/LinxDevelopKeyStoreApril.p12
+ isAppProduction=false
+ MaximumRetries=5
+
+ MaximumRetries=5

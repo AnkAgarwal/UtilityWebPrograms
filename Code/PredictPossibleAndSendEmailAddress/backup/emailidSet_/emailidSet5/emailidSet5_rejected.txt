@@ -1,0 +1,12 @@
+000e3cfca77a11e4aaceed642cb0f1a5	0	joaquín.riviera@missvenezuela.com
+000e3cfca77a11e4aaceed642cb0f1a5	1	joaquín_riviera@missvenezuela.com
+000e3cfca77a11e4aaceed642cb0f1a5	3	joaquín@missvenezuela.com
+000edcd6a77a11e4aaceed642cb0f1a5	0	jean.rivière@naiade.com
+000edcd6a77a11e4aaceed642cb0f1a5	1	jean_rivière@naiade.com
+000edcd6a77a11e4aaceed642cb0f1a5	2	jrivière@naiade.com
+000f93a2a77a11e4aaceed642cb0f1a5	0	laure.rivièredoumenc@lagardereactivebroadcast.fr
+000f93a2a77a11e4aaceed642cb0f1a5	1	laure_rivièredoumenc@lagardereactivebroadcast.fr
+000f93a2a77a11e4aaceed642cb0f1a5	2	lrivièredoumenc@lagardereactivebroadcast.fr
+000fb4fda77a11e4aaceed642cb0f1a5	0	laure.rivièredoumenc@lagardere.com
+000fb4fda77a11e4aaceed642cb0f1a5	1	laure_rivièredoumenc@lagardere.com
+000fb4fda77a11e4aaceed642cb0f1a5	2	lrivièredoumenc@lagardere.com

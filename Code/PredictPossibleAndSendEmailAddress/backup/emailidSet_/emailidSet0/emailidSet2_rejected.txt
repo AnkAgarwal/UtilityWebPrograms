@@ -1,0 +1,16 @@
+38bcd88aa77811e4aaceed642cb0f1a5	0	françois.varenne@scor.com
+38bcd88aa77811e4aaceed642cb0f1a5	1	françois_varenne@scor.com
+38bcd88aa77811e4aaceed642cb0f1a5	3	françois@scor.com
+38bd031ea77811e4aaceed642cb0f1a5	0	régis.delayat@scor.com
+38bd031ea77811e4aaceed642cb0f1a5	1	régis_delayat@scor.com
+38bd031ea77811e4aaceed642cb0f1a5	3	régis@scor.com
+38bedeeca77811e4aaceed642cb0f1a5	0	frédéric.fougère@scor.com
+38bedeeca77811e4aaceed642cb0f1a5	1	frédéric_fougère@scor.com
+38bedeeca77811e4aaceed642cb0f1a5	2	ffougère@scor.com
+38bedeeca77811e4aaceed642cb0f1a5	3	frédéric@scor.com
+38c24275a77811e4aaceed642cb0f1a5	0	frieder.knüpling@scor.com
+38c24275a77811e4aaceed642cb0f1a5	1	frieder_knüpling@scor.com
+38c24275a77811e4aaceed642cb0f1a5	2	fknüpling@scor.com
+38c274ffa77811e4aaceed642cb0f1a5	0	michèle.lacroix@scor.com
+38c274ffa77811e4aaceed642cb0f1a5	1	michèle_lacroix@scor.com
+38c274ffa77811e4aaceed642cb0f1a5	3	michèle@scor.com

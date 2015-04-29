@@ -1,0 +1,484 @@
+Found a 55 line (180 tokens) duplication in the following files: 
+Starting at line 407 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 269 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+			cellC1.setCellValue(cell3);
+			//cellStyle = workbook.createCellStyle();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    
+	
+		}
+		
+	/**
+     * This method for the type of data in the cell, extracts the data and
+     * returns it as a string.
+     */
+    public static String getCellValueAsString(Cell cell) {
+        String strCellValue = null;
+        if (cell != null) {
+            switch (cell.getCellType()) {
+            case Cell.CELL_TYPE_STRING:
+                strCellValue = cell.toString();
+                break;
+            case Cell.CELL_TYPE_NUMERIC:
+                if (DateUtil.isCellDateFormatted(cell)) {
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(
+                            "dd/MM/yyyy");
+                    strCellValue = dateFormat.format(cell.getDateCellValue());
+                } 
+                
+                else {
+                    Double value = cell.getNumericCellValue();
+                    Long longValue = value.longValue();
+                    
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(
+                            "###/###/###");
+                    strCellValue = dateFormat.format(value);
+                    strCellValue = new String(longValue.toString());
+                }
+                break;
+            case Cell.CELL_TYPE_BOOLEAN:
+                strCellValue = new String(new Boolean(cell.getBooleanCellValue()).toString());
+                break;
+              
+             
+            case Cell.CELL_TYPE_BLANK:
+                strCellValue = "";
+                break;
+            }
+          
+        }
+          
+        return strCellValue;
+    }
+    
+    
+    }
+=====================================================================
+Found a 27 line (161 tokens) duplication in the following files: 
+Starting at line 205 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 271 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+             		  secondFrmt= fmlname[0].toLowerCase()+"_"+fmlname[2].toLowerCase();
+             		  thirdFrmt = (fmlname[0].charAt(0)+fmlname[2]).toLowerCase();
+              		  fourthFrmt= fmlname[0].toLowerCase();
+              		  
+              		  int dotpos=splitCellVal[1].indexOf('.');
+              		indxOfBslash=splitCellVal[1].indexOf('/');
+              	      	 
+              	if(indxOfBslash<0)
+              	 {
+              		 cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+              	 }
+              	 else
+              	 {
+              		 cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+              		   
+              	 }
+              	 
+              	 emailID = firstFrmt+cmpName;
+              	 emailID=emailID+","+secondFrmt+cmpName;
+              	 emailID=emailID+","+thirdFrmt+cmpName;
+              	 emailID=emailID+","+fourthFrmt+cmpName;
+              	 contactId=contactId+emailID+",";
+              	 contactId=contactId.replaceAll(" ","");  
+              	 
+              	/*writeExcel(newnames, splitCellVal[1],contactId);
+              	return;*/
+         		  }
+=====================================================================
+Found a 31 line (145 tokens) duplication in the following files: 
+Starting at line 166 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 303 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+       		  thirdFrmt = (fmlname[0].charAt(0)+fmlname[1]).toLowerCase();
+       		  fourthFrmt= (fmlname[0]).toLowerCase();
+       		
+       		  int dotpos=splitCellVal[1].indexOf('.');
+       		indxOfBslash=splitCellVal[1].indexOf('/');
+       	      	 
+       		  if(indxOfBslash<0)
+       		  {
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+       		  }
+       		  else
+       		  {
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+       		   
+       		  }
+       	 
+       		  		emailID = firstFrmt+cmpName;
+       		  		emailID=emailID+","+secondFrmt+cmpName;
+       		  		emailID=emailID+","+thirdFrmt+cmpName;
+       		  		emailID=emailID+","+fourthFrmt+cmpName;
+       		  		contactId=contactId+emailID+",";
+       		  		contactId=contactId.replaceAll(" ","");  
+    	     
+    	    /* writeExcel(newnames, splitCellVal[1],contactId);
+    	     return;*/
+    	     }
+    	     break;
+    	     
+    	     // for name like :-Grace C. torris, M.sadiq peshimam, pamela jane herbst;
+  /*====================================================================================================================================*/  	     
+    	     case 3:
+=====================================================================
+Found a 28 line (133 tokens) duplication in the following files: 
+Starting at line 207 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 239 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+              		  fourthFrmt= fmlname[0].toLowerCase();
+              		  
+              		  int dotpos=splitCellVal[1].indexOf('.');
+              		indxOfBslash=splitCellVal[1].indexOf('/');
+              	      	 
+              	if(indxOfBslash<0)
+              	 {
+              		 cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+              	 }
+              	 else
+              	 {
+              		 cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+              		   
+              	 }
+              	 
+              	 emailID = firstFrmt+cmpName;
+              	 emailID=emailID+","+secondFrmt+cmpName;
+              	 emailID=emailID+","+thirdFrmt+cmpName;
+              	 emailID=emailID+","+fourthFrmt+cmpName;
+              	 contactId=contactId+emailID+",";
+              	 contactId=contactId.replaceAll(" ","");  
+              	 
+              	/*writeExcel(newnames, splitCellVal[1],contactId);
+              	return;*/
+         		  }
+         		  
+ /*============================================================================================================================*/        		 
+         		if(index0length==1 && index1length>1  && index2length>1)  //for name like:-  M.sadiq peshimam
+=====================================================================
+Found a 26 line (130 tokens) duplication in the following files: 
+Starting at line 239 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 273 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+            		  fourthFrmt= fmlname[0]+fmlname[2].toLowerCase();
+            		 
+            		  
+            		  int dotpos=splitCellVal[1].indexOf('.');
+            		  indxOfBslash=splitCellVal[1].indexOf('/');
+            	      	 
+            	if(indxOfBslash<0)
+            	 {
+            		 cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+            	 }
+            	 else
+            	 {
+            		 cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+            		   
+            	 }
+            	 
+            	 emailID = firstFrmt+cmpName;
+            	 emailID=emailID+","+secondFrmt+cmpName;
+            	 emailID=emailID+","+thirdFrmt+cmpName;
+            	 emailID=emailID+","+fourthFrmt+cmpName;
+            	 contactId=contactId+emailID+",";
+            	 contactId=contactId.replaceAll(" ","");  
+            	 
+            	/* writeExcel(newnames, splitCellVal[1],contactId);
+            	 return;*/
+       		  }
+=====================================================================
+Found a 25 line (129 tokens) duplication in the following files: 
+Starting at line 167 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 207 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 239 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 273 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 304 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+       		  fourthFrmt= (fmlname[0]).toLowerCase();
+       		
+       		  int dotpos=splitCellVal[1].indexOf('.');
+       		indxOfBslash=splitCellVal[1].indexOf('/');
+       	      	 
+       		  if(indxOfBslash<0)
+       		  {
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+       		  }
+       		  else
+       		  {
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+       		   
+       		  }
+       	 
+       		  		emailID = firstFrmt+cmpName;
+       		  		emailID=emailID+","+secondFrmt+cmpName;
+       		  		emailID=emailID+","+thirdFrmt+cmpName;
+       		  		emailID=emailID+","+fourthFrmt+cmpName;
+       		  		contactId=contactId+emailID+",";
+       		  		contactId=contactId.replaceAll(" ","");  
+    	     
+    	    /* writeExcel(newnames, splitCellVal[1],contactId);
+    	     return;*/
+    	     }
+=====================================================================
+Found a 13 line (77 tokens) duplication in the following files: 
+Starting at line 206 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 272 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 334 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+             		  thirdFrmt = (fmlname[0].charAt(0)+fmlname[2]).toLowerCase();
+              		  fourthFrmt= fmlname[0].toLowerCase();
+              		  
+              		  int dotpos=splitCellVal[1].indexOf('.');
+              		indxOfBslash=splitCellVal[1].indexOf('/');
+              	      	 
+              	if(indxOfBslash<0)
+              	 {
+              		 cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+              	 }
+              	 else
+              	 {
+              		 cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+=====================================================================
+Found a 13 line (66 tokens) duplication in the following files: 
+Starting at line 239 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 335 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+            		  fourthFrmt= fmlname[0]+fmlname[2].toLowerCase();
+            		 
+            		  
+            		  int dotpos=splitCellVal[1].indexOf('.');
+            		  indxOfBslash=splitCellVal[1].indexOf('/');
+            	      	 
+            	if(indxOfBslash<0)
+            	 {
+            		 cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+            	 }
+            	 else
+            	 {
+            		 cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+=====================================================================
+Found a 12 line (65 tokens) duplication in the following files: 
+Starting at line 167 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 304 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 335 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+       		  fourthFrmt= (fmlname[0]).toLowerCase();
+       		
+       		  int dotpos=splitCellVal[1].indexOf('.');
+       		indxOfBslash=splitCellVal[1].indexOf('/');
+       	      	 
+       		  if(indxOfBslash<0)
+       		  {
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+       		  }
+       		  else
+       		  {
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+=====================================================================
+Found a 12 line (61 tokens) duplication in the following files: 
+Starting at line 284 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 346 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+             		 cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+             		   
+             	 }
+             	 emailID = firstFrmt+cmpName;
+             	 emailID=emailID+","+secondFrmt+cmpName;
+             	 emailID=emailID+","+thirdFrmt+cmpName;
+             	 emailID=emailID+","+fourthFrmt+cmpName;
+             	 contactId=contactId+emailID+",";
+             	 contactId=contactId.replaceAll(" ","");  
+             	 
+         		  }	 
+    	     }
+=====================================================================
+Found a 14 line (60 tokens) duplication in the following files: 
+Starting at line 178 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 218 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 251 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 314 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 346 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+       		   
+       		  }
+       	 
+       		  		emailID = firstFrmt+cmpName;
+       		  		emailID=emailID+","+secondFrmt+cmpName;
+       		  		emailID=emailID+","+thirdFrmt+cmpName;
+       		  		emailID=emailID+","+fourthFrmt+cmpName;
+       		  		contactId=contactId+emailID+",";
+       		  		contactId=contactId.replaceAll(" ","");  
+    	     
+    	    /* writeExcel(newnames, splitCellVal[1],contactId);
+    	     return;*/
+    	     }
+=====================================================================
+Found a 5 line (56 tokens) duplication in the following files: 
+Starting at line 234 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 267 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+
+         		if(index0length==1 && index1length>1  && index2length>1)  //for name like:-  M.sadiq peshimam
+       		  {
+         			  firstFrmt = (fmlname[0]+"."+fmlname[2]).toLowerCase();
+           		      secondFrmt= (fmlname[0]+"_"+fmlname[2]).toLowerCase();
+           		      thirdFrmt = (fmlname[0]+fmlname[1].charAt(0)+fmlname[2]).toLowerCase();
+=====================================================================
+Found a 7 line (46 tokens) duplication in the following files: 
+Starting at line 172 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 212 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 245 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 278 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 308 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 179 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+       		  if(indxOfBslash<0)
+       		  {
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+       		  }
+       		  else
+       		  {
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+=====================================================================
+Found a 8 line (42 tokens) duplication in the following files: 
+Starting at line 51 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 49 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+            Row row = rit.next();
+           //System.out.println("outer loop "+j++);
+            for (Iterator<Cell> cit = row.cellIterator(); cit.hasNext();) 
+            {
+                Cell cell = cit.next();
+                // Print the each cell value
+                
+                recCellVal= getCellValueAsString(cell);
+=====================================================================
+Found a 16 line (42 tokens) duplication in the following files: 
+Starting at line 64 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 62 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+                	addCellVal=addCellVal+splitDelemiter+recCellVal;
+             
+            }
+            obj.write(addCellVal);
+        }
+        obj.workbook.write(fileOut);
+		fileOut.flush();
+       
+		inputStream.close();
+        fileOut.close();   
+        
+    }
+	
+	
+	public void write(String addedCellVal)
+    {
+=====================================================================
+Found a 8 line (39 tokens) duplication in the following files: 
+Starting at line 42 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 40 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+        fileOut = new FileOutputStream("D:\\demofile\\test005.xls");
+        // Create a workbook object.
+        Workbook wb = WorkbookFactory.create(inputStream);
+        Sheet sheet = wb.getSheetAt(0);
+         
+        // Iterate over all the row and cells
+        for (Iterator<Row> rit = sheet.rowIterator(); rit.hasNext();) 
+        {
+=====================================================================
+Found a 7 line (35 tokens) duplication in the following files: 
+Starting at line 340 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 179 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+         		  if(indxOfBslash<0)
+         		  {
+         			  cmpName="@"+splitCellVal[1].substring(dotpos+1, splitCellVal[1].length());
+         		  }
+         		  else
+         		  {
+         			  cmpName="@"+(splitCellVal[1]).substring(dotpos+1, indxOfBslash);
+=====================================================================
+Found a 6 line (34 tokens) duplication in the following files: 
+Starting at line 90 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 108 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+        	String[] names=splitCellVal[0].split(";");
+        	int nameLen=names.length;
+    	 
+    	 for(int nameIterator=0;nameIterator<nameLen;nameIterator++)
+    	 {
+    		 int indxOfBslash=0;
+=====================================================================
+Found a 8 line (34 tokens) duplication in the following files: 
+Starting at line 178 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 218 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 251 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 284 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 314 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 346 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 185 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+       			  cmpName="@"+splitCellVal[1].substring(dotpos+1, indxOfBslash);
+       		   
+       		  }
+       	 
+       		  		emailID = firstFrmt+cmpName;
+       		  		emailID=emailID+","+secondFrmt+cmpName;
+       		  		emailID=emailID+","+thirdFrmt+cmpName;
+       		  		emailID=emailID+","+fourthFrmt+cmpName;
+=====================================================================
+Found a 11 line (34 tokens) duplication in the following files: 
+Starting at line 367 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 229 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+        }
+        
+        catch(Exception e){
+        	part1="";
+        	e.printStackTrace();
+        }
+        
+		try {
+			part2 = splitCellVal[1];
+		} catch (Exception e) {
+			part2 = "";
+=====================================================================
+Found a 3 line (34 tokens) duplication in the following files: 
+Starting at line 139 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+Starting at line 158 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+        			 newnames=newnames+NewName+";"; 
+             		 newnames=newnames.replaceAll("  "," ").replaceAll(" ;", ";").replaceAll("; ", ";");
+             		 firstFrmt = (indexValue_0+indexValue_1+indexValue_2).toLowerCase();
+=====================================================================
+Found a 5 line (31 tokens) duplication in the following files: 
+Starting at line 207 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+Starting at line 253 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+        	HSSFRow row1 = this.worksheet.createRow((short) row++);
+		    
+			
+			HSSFCell cellA1 = row1.createCell((short) 0);
+			cellA1.setCellValue(frstrow[0]);
+=====================================================================
+Found a 5 line (29 tokens) duplication in the following files: 
+Starting at line 30 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 29 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+	HSSFWorkbook workbook = new HSSFWorkbook();
+	HSSFSheet worksheet = workbook.createSheet("Website_info");
+   
+	public static void main(String[] args) throws Exception 
+    {
+=====================================================================
+Found a 2 line (26 tokens) duplication in the following files: 
+Starting at line 133 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample2.java
+Starting at line 139 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+Starting at line 158 of D:\Rakesh Pal\Rakesh-workspace_2\ExcelRead\src\POIReadingCellValueAsStringExample.java
+
+    		 newnames=newnames+newName+";"; 
+     		 newnames=newnames.replaceAll("  "," ").replaceAll(" ;", ";").replaceAll("; ", ";");

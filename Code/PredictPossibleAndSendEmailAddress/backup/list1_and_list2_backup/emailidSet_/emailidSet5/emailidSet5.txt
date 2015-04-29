@@ -1,0 +1,12 @@
+104	0	victor.pradenas@axaequitable.com
+104	1	victor_pradenas@axaequitable.com
+104	2	vpradenas@axaequitable.com
+104	3	victor@axaequitable.com
+105	0	susan.john@axaequitable.com
+105	1	susan_john@axaequitable.com
+105	2	sjohn@axaequitable.com
+105	3	susan@axaequitable.com
+106	0	andrew.varley@axaequitable.com
+106	1	andrew_varley@axaequitable.com
+106	2	avarley@axaequitable.com
+106	3	andrew@axaequitable.com
